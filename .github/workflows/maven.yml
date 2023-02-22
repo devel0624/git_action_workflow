@@ -44,7 +44,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: "jar"
+          name: "target"
           path: "${{ github.workspace }}/"
 
       - name: directory check
