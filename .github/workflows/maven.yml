@@ -45,7 +45,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: "target"
-          path: "${{ github.workspace }}"
+          path: "${{ github.workspace }}/target"
 
       - name: directory check
         run: "ls -al ${{ github.workspace }}"
