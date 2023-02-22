@@ -11,6 +11,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      node-version: '16.x'
 
     steps:
       - uses: actions/checkout@v3
@@ -27,8 +29,6 @@ jobs:
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
-        env:
-          node-version: '16.x'
         with:
           name: "jar"
           path: "${{ github.workspace }}/target/*.jar"
@@ -37,13 +37,15 @@ jobs:
   test:
     needs: build
     runs-on: ubuntu-latest
+    env:
+      node-version: '16.x'
+
+
     steps:
       - uses: actions/checkout@v3
 
       - name: Download artifacts
         uses: actions/download-artifact@v2
-        env:
-          node-version: '16.x'
         with:
           name: "jar"
           path: "${{ github.workspace }}/target/"
