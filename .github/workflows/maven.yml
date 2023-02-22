@@ -48,5 +48,8 @@ jobs:
           path: "${{ github.workspace }}"
 
       - name: directory check
+        run: "ls -al ${{ github.workspace }}"
+
+      - name: directory check
         run : "ls -al ${{ github.workspace }}/target"
 
